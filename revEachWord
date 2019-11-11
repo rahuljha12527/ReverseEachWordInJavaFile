@@ -1,0 +1,47 @@
+import java.util.Scanner;
+
+public class runner {
+
+
+	// Return the reversed string. No need to print
+	public static String reverseEachWord(String input) {
+		// Write your code here
+      
+        String ans="";
+         
+        int i=0;
+         int startWord=0;
+        for(;i<input.length();i++){
+           
+           String rev="";
+            if(input.charAt(i)==' '){
+              int endWord=i-1;
+              for(int j=startWord;j<=endWord;j++){
+                  
+                  rev=input.charAt(j)+rev;
+              }  
+                ans+=rev+" ";
+                startWord=i+1;
+            }
+        }
+        
+        int endWord=i-1;
+        String rev="";
+        for(int j=startWord;j<=endWord;j++){
+            rev=input.charAt(j)+rev;
+        }
+        
+        ans+=rev;
+    
+        return ans;
+	}
+  public static void main(String[] args) {
+		Scanner s = new Scanner(System.in);
+		String input = s.nextLine();
+		System.out.println(reverseEachWord(input));
+	}
+
+}
+
+	
+
